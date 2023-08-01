@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { React, useState } from "react";
 
-import "./App.css";
+import "./App.module.css";
 import Banner from "./components/UI/Input/Banner";
 
 import Button from "./components/UI/Button/Button";
