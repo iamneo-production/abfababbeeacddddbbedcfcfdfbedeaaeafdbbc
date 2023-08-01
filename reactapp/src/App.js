@@ -15,8 +15,8 @@ function App() {
     setStart(true);
   };
 
-  function func(correct) {
-    if (correct === true) {
+  function checkQuestion(userAns) {
+    if (userAns === true) {
       setQuestionsCorrect(questionsCorrect + 1);
       console.log("questionsCorrect: " + questionsCorrect);
     }
@@ -44,8 +44,7 @@ function App() {
                 answer,
               }) => {
                 return (
-                  <Card key={qId} question={question} correctAnswerMarkUpdate={func}
-                    attempt={func}
+                  <Card key={qId} question={question} correctAnswerMarkUpdate={checkQuestion} attempt={checkQuestion}
                     options={{
                       option1: option_1,
                       option2: option_2,
