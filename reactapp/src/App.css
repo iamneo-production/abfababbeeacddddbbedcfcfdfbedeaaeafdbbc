@@ -22,9 +22,15 @@
 .button {
   background-color: #ffba93;
   padding: 2% 4%;
-  border-radius: 6px;
   outline: none;
   border: 1px solid #994413;
+}
+
+.start-btn > .button {
+  width: 800px;
+  font-size: 18px;
+  font-weight: 550;
+  margin-top: 50px;
 }
 
 .button:hover {
@@ -55,7 +61,6 @@
   background-color: #9f5f80;
   width: calc(33.33% - 10px);
   margin: 5px;
-  border-radius: 12px;
   flex-grow: 1;
 }
 
@@ -67,9 +72,6 @@
 .card > .buttons {
   margin: 30px 20px;
   display: flex;
-  width: fit-content;
-  height: fit-content;
-  padding: 10px;
 }
 
 .buttons > .button {
