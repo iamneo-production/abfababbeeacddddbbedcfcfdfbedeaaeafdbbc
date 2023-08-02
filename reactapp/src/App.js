@@ -19,7 +19,6 @@ function App() {
   function func(correct) {
     if (correct === true) {
       setQuestionsCorrect(questionsCorrect + 1);
-      console.log("questionsCorrect: " + questionsCorrect);
     }
   }
 
@@ -72,7 +71,7 @@ function App() {
           {end && (
             <Banner>You have answered {questionsCorrect} / 5 Correctly</Banner>
           )}
-          <Button onClick={startTest}>{"Start Quiz"}</Button>
+          {   <Button onClick={startTest}>{"Start Quiz"}</Button>}
         </div>
         )
       }
