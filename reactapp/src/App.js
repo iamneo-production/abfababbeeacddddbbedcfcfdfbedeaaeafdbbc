@@ -1,13 +1,28 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+
+  const [started, setStarted] = useState(false);
+
+  const handleStartButton = () => {
+    setStarted(!started);
+  }
+
   return (
     <div className="App">
       <h1>Quizz App</h1>
-      <div className="start-btn-container">
-        <button onCli className="start-btn">Start Quiz</button>
-      </div>
+      {
+        started ? (
+
+
+        ) : 
+        (
+        <div className="start-btn-container">
+        <button onClick={() => handleStartButton()} className="start-btn">Start Quiz</button>
+      </div>)
+      }
+      
     </div>
   );
 }
