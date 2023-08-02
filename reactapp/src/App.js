@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
 import questions from "./Data/data";
-import card from "./components/UI/Card/card";
+import Card from "./components/UI/Card/Card";
+import Banner from "./components/UI/Banner/Banner";
+import Button from "./components/UI/Button/Button";
 
 function App() {
 
@@ -30,7 +32,7 @@ function App() {
     <div className="App">
       <h1>Quizz App</h1>
       {
-        started ? (
+        start ? (
           <div className='quiz-container'>
             <div className='card-container'>
             {questions.map(
@@ -44,7 +46,7 @@ function App() {
                 answer,
               }) => {
                 return (
-                  <card
+                  <Card
                     key={questionId}
                     question={question}
                     correctAnswerMarkUpdate={func}
@@ -61,12 +63,17 @@ function App() {
               }
             )}
             </div>
+            <Button onClick={showResults}>{"Show results"}</Button>
           </div>
+          
         ) : 
         (
-          <div className="start-btn-container">
-            <button onClick={() => handleStartButton()} className="start-btn">Start Quiz</button>
-          </div>
+          <div className="end">
+          {end && (
+            <Banner>You have answered {questionsCorrect} / 5 Correctly</Banner>
+          )}
+          <Button onClick={startTest}>{"Start Quiz"}</Button>
+        </div>
         )
       }
       
