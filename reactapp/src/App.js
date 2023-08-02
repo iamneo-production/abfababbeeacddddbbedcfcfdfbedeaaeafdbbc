@@ -10,7 +10,7 @@ function App() {
   const [start, setStart] = useState(false);
   const [end, setEnd] = useState(false);
   const [questionsCorrect, setQuestionsCorrect] = useState(0);
-  const [questionsAtteempt, setQuestionsAttempt] = useState(0);
+  const [questionsAttempt, setQuestionsAttempt] = useState(0);
 
   const startTest = () => {
     setQuestionsCorrect(0);
@@ -23,8 +23,10 @@ function App() {
     }
   }
 
-  function isAllAtempted() {
-    
+  function isAllAtempted(variable) {
+    if (variable === true) {
+      setQuestionsAttempt(questionsAttempt + 1);
+    }
   }
 
   function showResults() {
@@ -54,7 +56,7 @@ function App() {
                     key={questionId}
                     question={question}
                     correctAnswerMarkUpdate={func}
-                    attempt={func}
+                    attempt={isAllAtempted}
                     options={{
                       option1: option1,
                       option2: option2,
@@ -67,7 +69,11 @@ function App() {
               }
             )}
             </div>
-            <Button onClick={showResults}>{"Show results"}</Button>
+            { questionsAtteempt > 5 ? 
+                (<Button onClick={showResults}>{"Show results"}</Button>)
+              :
+              ('')
+            }
           </div>
           
         ) : 

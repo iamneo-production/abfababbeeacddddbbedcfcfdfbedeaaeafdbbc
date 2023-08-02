@@ -10,7 +10,7 @@ const Card = (props) => {
     if (a === ans) {
       props.correctAnswerMarkUpdate(true);
     }
-    
+    props.attempt(true);
   };
 
   return (
