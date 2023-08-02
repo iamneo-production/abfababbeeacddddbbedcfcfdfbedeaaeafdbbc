@@ -11,7 +11,7 @@ function App() {
   const [start, setStart] = useState(false);
   const [end, setEnd] = useState(false);
   const [questionsCorrect, setQuestionsCorrect] = useState(0);
-  const [attemptCount, setQuestionsCorrect] = useState(0);
+  const [attemptCount, setAttemptCount] = useState(0);
 
   const startTest = () => {
     setQuestionsCorrect(0);
@@ -24,9 +24,9 @@ function App() {
     }
   }
 
-  function func(correct) {
-    if (correct === true) {
-      setQuestionsCorrect(questionsCorrect + 1);
+  function checkAttemptCount(variable) {
+    if (variable === true) {
+      setAttemptCount(attemptCount + 1);
     }
   }
 
@@ -57,7 +57,7 @@ function App() {
                     key={questionId}
                     question={question}
                     correctAnswerMarkUpdate={func}
-                    attempt={func}
+                    attempt={checkAttemptCount}
                     options={{
                       option1: option1,
                       option2: option2,
@@ -70,7 +70,7 @@ function App() {
               }
             )}
           </div>
-          <Button onClick={showResults}>{"Show results"}</Button>
+          { attemptCount === 5 && <Button onClick={showResults}>{"Show Results"}</Button>}
         </div>
       ) : (
         <div className="end">
