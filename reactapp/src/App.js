@@ -35,11 +35,11 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>Quizz App</h1>
       {
         start ? (
-          <div className='quiz-container'>
+          <div className='container'>
             <div className='card-container'>
             {questions.map(
               ({
@@ -69,8 +69,8 @@ function App() {
               }
             )}
             </div>
-            { questionsAtteempt > 5 ? 
-                (<Button onClick={showResults}>{"Show results"}</Button>)
+            { questionsAttempt === 5 ? 
+                (<Button onClick={showResults}>Show results</Button>)
               :
               ('')
             }
@@ -82,7 +82,7 @@ function App() {
           {end && (
             <Banner>You have answered {questionsCorrect} / 5 Correctly</Banner>
           )}
-          {   <Button onClick={startTest}>{"Start Quiz"}</Button>}
+          {   <Button onClick={startTest}>Start Quiz</Button>}
         </div>
         )
       }
