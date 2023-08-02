@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../Button/Buttons";
+import Button from "../Button/Button";
 
 const Card = (props) => {
   const ans = props.answer;

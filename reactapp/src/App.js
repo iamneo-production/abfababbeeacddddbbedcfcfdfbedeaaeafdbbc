@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import Banner from "./components/UI/Banner/Banner";
 
-import Button from "./components/UI/Button/Buttons";
+import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
 import questions from "./Data/data";
 
