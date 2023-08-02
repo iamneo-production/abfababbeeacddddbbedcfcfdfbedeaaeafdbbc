@@ -11,6 +11,7 @@ function App() {
   const [start, setStart] = useState(false);
   const [end, setEnd] = useState(false);
   const [questionsCorrect, setQuestionsCorrect] = useState(0);
+  const [attemptCount, setQuestionsCorrect] = useState(0);
 
   const startTest = () => {
     setQuestionsCorrect(0);
@@ -20,7 +21,12 @@ function App() {
   function func(correct) {
     if (correct === true) {
       setQuestionsCorrect(questionsCorrect + 1);
-      console.log("questionsCorrect: " + questionsCorrect);
+    }
+  }
+
+  function func(correct) {
+    if (correct === true) {
+      setQuestionsCorrect(questionsCorrect + 1);
     }
   }
 
