@@ -12,7 +12,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "PORT=8081 react-scripts start",
+    "start": "PORT=8081 react-scripts start",  npm i @cfaester/enzyme-adapter-react-18
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

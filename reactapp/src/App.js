@@ -79,14 +79,16 @@ function App() {
         ) : 
         (
           <div className="end">
-          {end && (
+          {end ? (
+            <>
             <Banner>You have answered {questionsCorrect} / 5 Correctly</Banner>
-          )}
-          {
+            <Button onClick={startTest}>Start Quiz</Button>
+            </>
+          ) : (
             <div className='start-btn'>
-              <Button onClick={startTest}>Start Quiz</Button>
-            </div>
-          }
+            <Button onClick={startTest}>Start Quiz</Button>
+          </div>
+          )}
         </div>
         )
       }
