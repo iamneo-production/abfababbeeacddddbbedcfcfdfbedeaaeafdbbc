@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
+
 import "./App.css";
 import Banner from "./components/UI/Banner/Banner";
+
 import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
-import questions from "./Data/data";
+import questions from "./Data/Data";
 
 function App() {
   const [start, setStart] = useState(false);
@@ -15,8 +17,8 @@ function App() {
     setStart(true);
   };
 
-  function checkQuestion(userAns) {
-    if (userAns === true) {
+  function func(correct) {
+    if (correct === true) {
       setQuestionsCorrect(questionsCorrect + 1);
       console.log("questionsCorrect: " + questionsCorrect);
     }
@@ -30,26 +32,31 @@ function App() {
   return (
     <div className="app">
       <h1>Quizz App</h1>
+
       {start ? (
         <div className="container">
           <div className="card-container">
             {questions.map(
               ({
-                qId,
+                questionId,
                 question,
-                option_1,
-                option_2,
-                option_3,
-                option_4,
+                option1,
+                option2,
+                option3,
+                option4,
                 answer,
               }) => {
                 return (
-                  <Card key={qId} question={question} correctAnswerMarkUpdate={checkQuestion} attempt={checkQuestion}
+                  <Card
+                    key={questionId}
+                    question={question}
+                    correctAnswerMarkUpdate={func}
+                    attempt={func}
                     options={{
-                      option1: option_1,
-                      option2: option_2,
-                      option3: option_3,
-                      option4: option_4,
+                      option1: option1,
+                      option2: option2,
+                      option3: option3,
+                      option4: option4,
                     }}
                     answer={answer}
                   />
