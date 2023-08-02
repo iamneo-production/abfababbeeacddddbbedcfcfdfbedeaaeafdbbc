@@ -1,12 +1,29 @@
 import React, {useState} from 'react';
 import './App.css';
+import questions from "./Data/data";
+import card from "./components/UI/Card/card";
 
 function App() {
 
-  const [started, setStarted] = useState(false);
+  const [start, setStart] = useState(false);
+  const [end, setEnd] = useState(false);
+  const [questionsCorrect, setQuestionsCorrect] = useState(0);
 
-  const handleStartButton = () => {
-    setStarted(!started);
+  const startTest = () => {
+    setQuestionsCorrect(0);
+    setStart(true);
+  };
+
+  function func(correct) {
+    if (correct === true) {
+      setQuestionsCorrect(questionsCorrect + 1);
+      console.log("questionsCorrect: " + questionsCorrect);
+    }
+  }
+
+  function showResults() {
+    setStart(false);
+    setEnd(true);
   }
 
   return (
@@ -15,30 +32,34 @@ function App() {
       {
         started ? (
           <div className='quiz-container'>
-            <div className='quiz-col-1'> 
-              <div className='question-container'>
-                <div className='question'>
-
-                </div>
-                <div className='options-container'></div>
-              </div>
-              <div className='question-container'>
-
-              </div>
-            </div>
-            <div className='quiz-col-2'>
-              <div className='question-container'>
-                
-              </div>
-              <div className='question-container'>
-                
-              </div>
-              <div className='question-container'>
-                
-              </div>
-            </div>
-            <div className='submit-btn-container'>
-
+            <div className='card-container'>
+            {questions.map(
+              ({
+                questionId,
+                question,
+                option1,
+                option2,
+                option3,
+                option4,
+                answer,
+              }) => {
+                return (
+                  <card
+                    key={questionId}
+                    question={question}
+                    correctAnswerMarkUpdate={func}
+                    attempt={func}
+                    options={{
+                      option1: option1,
+                      option2: option2,
+                      option3: option3,
+                      option4: option4,
+                    }}
+                    answer={answer}
+                  />
+                );
+              }
+            )}
             </div>
           </div>
         ) : 
