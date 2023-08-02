@@ -14,13 +14,36 @@ function App() {
       <h1>Quizz App</h1>
       {
         started ? (
+          <div className='quiz-container'>
+            <div className='quiz-col-1'> 
+              <div className='question-container'>
+                
+              </div>
+              <div className='question-container'>
 
+              </div>
+            </div>
+            <div className='quiz-col-2'>
+              <div className='question-container'>
+                
+              </div>
+              <div className='question-container'>
+                
+              </div>
+              <div className='question-container'>
+                
+              </div>
+            </div>
+            <div className='submit-btn-container'>
 
+            </div>
+          </div>
         ) : 
         (
-        <div className="start-btn-container">
-        <button onClick={() => handleStartButton()} className="start-btn">Start Quiz</button>
-      </div>)
+          <div className="start-btn-container">
+            <button onClick={() => handleStartButton()} className="start-btn">Start Quiz</button>
+          </div>
+        )
       }
       
     </div>
