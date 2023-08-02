@@ -17,7 +17,10 @@ function App() {
           <div className='quiz-container'>
             <div className='quiz-col-1'> 
               <div className='question-container'>
-                
+                <div className='question'>
+
+                </div>
+                <div className='options-container'></div>
               </div>
               <div className='question-container'>
 
