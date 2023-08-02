@@ -8,8 +8,9 @@ const Card = (props) => {
   const check = (a) => {
     setDisabled(true);
     if (a === ans) {
-      props.attempt(true);
+      props.correctAnswerMarkUpdate(true);
     }
+    
   };
 
   return (

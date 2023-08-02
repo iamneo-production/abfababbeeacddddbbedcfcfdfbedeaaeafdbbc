@@ -10,6 +10,7 @@ function App() {
   const [start, setStart] = useState(false);
   const [end, setEnd] = useState(false);
   const [questionsCorrect, setQuestionsCorrect] = useState(0);
+  const [questionsAtteempt, setQuestionsAttempt] = useState(0);
 
   const startTest = () => {
     setQuestionsCorrect(0);
@@ -20,6 +21,10 @@ function App() {
     if (correct === true) {
       setQuestionsCorrect(questionsCorrect + 1);
     }
+  }
+
+  function isAllAtempted() {
+    
   }
 
   function showResults() {
